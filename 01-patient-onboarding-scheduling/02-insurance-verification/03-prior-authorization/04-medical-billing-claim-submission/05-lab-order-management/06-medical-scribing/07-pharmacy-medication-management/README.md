@@ -57,7 +57,7 @@ Simulated Training Project — Mock Patient Data
 
 ## Project Evidence
 
-- Screenshots: Not available
+- Screenshots: To be added
 - Workflow Documentation: To be added
 - Video Demonstration: To be added
 
