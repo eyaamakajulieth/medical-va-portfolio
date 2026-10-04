@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eya Amaka Julieth | Medical Virtual Assistant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #243447;
+      background: #f7fafc;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #176b87;
+    }
+
+    nav a {
+      color: #243447;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 80px 8%;
+      background: linear-gradient(135deg, #eef9fc, #ffffff);
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-text p:first-child {
+      color: #176b87;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      color: #17324d;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: #176b87;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: #52606d;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #176b87;
+      color: white;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #176b87;
+      border: 1px solid #176b87;
+    }
+
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid white;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #17324d;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #687786;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+      color: #52606d;
+    }
+
+    .services {
+      background: #f7fafc;
+    }
+
+    .service-grid,
+    .project-grid,
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #176b87;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #687786;
+      font-size: 15px;
+    }
+
+    .projects {
+      background: white;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+
+    .project-number {
+      font-size: 13px;
+      font-weight: bold;
+      color: #7b8794;
+      margin-bottom: 12px;
+    }
+
+    .project-card .button {
+      margin-top: 20px;
+      align-self: flex-start;
+    }
+
+    .tools {
+      background: #eef9fc;
+    }
+
+    .tools-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .tool {
+      background: white;
+      padding: 18px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #365568;
+    }
+
+    .contact {
+      background: #17324d;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #d9e4ec;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #102638;
+      color: #b8c7d3;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 6%;
+      }
+
+      .profile-photo {
+        width: 220px;
+        height: 220px;
+      }
+
+      .service-grid,
+      .project-grid,
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Eya Amaka Julieth</div>
+
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-text">
+      <p>MEDICAL VIRTUAL ASSISTANT</p>
+
+      <h1>Eya Amaka Julieth</h1>
+
+      <h2>Healthcare Administrative & Virtual Support</h2>
+
+      <p class="hero-description">
+        Providing organized, detail-oriented support across healthcare
+        administration, EHR workflows, patient coordination, documentation,
+        insurance processes, and medical virtual assistance.
+      </p>
+
+      <a href="#projects" class="button">View My Projects</a>
+      <a href="#contact" class="button secondary">Contact Me</a>
+    </div>
+
+    <div>
+      <img src="profile.jpg" alt="Eya Amaka Julieth" class="profile-photo">
+    </div>
+
+  </section>
+
+
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Healthcare support with clinical and administrative experience</p>
+    </div>
+
+    <div class="about-content">
+
+      <p>
+        I am a Medical Virtual Assistant with a healthcare background and
+        practical training in healthcare administration, electronic health
+        records, patient coordination, medical documentation, insurance
+        verification, prior authorization, billing workflows, and other
+        administrative healthcare processes.
+      </p>
+
+      <br>
+
+      <p>
+        My approach is centered on accuracy, organization, confidentiality,
+        clear communication, and reliable administrative support that helps
+        healthcare professionals stay focused on patient care.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <h2>What I Can Help With</h2>
+      <p>Healthcare administrative and virtual support services</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="card">
+        <h3>Patient Support</h3>
+        <p>
+          Patient onboarding, appointment scheduling, confirmations,
+          follow-ups, portal support, and administrative communication.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>EHR Support</h3>
+        <p>
+          EHR navigation, patient records, documentation, chart organization,
+          and healthcare workflow support.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Insurance & Billing</h3>
+        <p>
+          Insurance verification, prior authorization, billing workflows,
+          claims documentation, and administrative support.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Clinical Documentation</h3>
+        <p>
+          Medical scribing, SOAP documentation, medical writing, and
+          organized healthcare documentation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Laboratory Support</h3>
+        <p>
+          Lab order management, requisition workflows, patient reminders,
+          and follow-up coordination.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Healthcare Administration</h3>
+        <p>
+          Administrative coordination, documentation, communication,
+          scheduling, and workflow organization.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="projects" id="projects">
+
+    <div class="section-title">
+      <h2>My Medical VA Projects</h2>
+      <p>Selected simulated training projects demonstrating practical workflows</p>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">01</div>
+          <h3>Patient Onboarding & Scheduling</h3>
+          <p>
+            Patient registration, scheduling, portal support,
+            intake documentation, and appointment confirmation.
+          </p>
+        </div>
+        <a href="01-patient-onboarding-scheduling/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">02</div>
+          <h3>Insurance Verification</h3>
+          <p>
+            Insurance eligibility verification, documentation,
+            information review, and exception handling.
+          </p>
+        </div>
+        <a href="02-insurance-verification/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">03</div>
+          <h3>Prior Authorization</h3>
+          <p>
+            Simulated prior authorization workflow using CoverMyMeds.
+          </p>
+        </div>
+        <a href="03-prior-authorization/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">04</div>
+          <h3>Medical Billing & Claims</h3>
+          <p>
+            Electronic billing, superbill, CMS-1500, claims,
+            and patient self-pay workflows.
+          </p>
+        </div>
+        <a href="04-medical-billing-claim-submission/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">05</div>
+          <h3>Lab Order Management</h3>
+          <p>
+            Lab order creation, requisition generation,
+            documentation, reminders, and follow-up.
+          </p>
+        </div>
+        <a href="05-lab-order-management/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">06</div>
+          <h3>Medical Scribing</h3>
+          <p>
+            Clinical documentation, SOAP notes, EHR documentation,
+            and documentation quality support.
+          </p>
+        </div>
+        <a href="06-medical-scribing/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">07</div>
+          <h3>Pharmacy & Medication Management</h3>
+          <p>
+            Medication records, prescription documentation,
+            pharmacy workflows, and EHR support.
+          </p>
+        </div>
+        <a href="07-pharmacy-medication-management/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">08</div>
+          <h3>Remote Patient Monitoring</h3>
+          <p>
+            Patient monitoring support, communication,
+            documentation, and follow-up workflows.
+          </p>
+        </div>
+        <a href="08-remote-patient-monitoring/" class="button">
+          View Project
+        </a>
+      </div>
+
+
+      <div class="card project-card">
+        <div>
+          <div class="project-number">09</div>
+          <h3>Medical Writing</h3>
+          <p>
+            Healthcare documentation, medical writing,
+            research organization, and professional communication.
+          </p>
+        </div>
+        <a href="09-medical-writing/" class="button">
+          View Project
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="tools">
+
+    <div class="section-title">
+      <h2>Tools & Platforms</h2>
+      <p>Healthcare, productivity, communication and workflow tools</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool">TherapyNotes</div>
+      <div class="tool">OptiMantra</div>
+      <div class="tool">CoverMyMeds</div>
+      <div class="tool">EHR Workflows</div>
+      <div class="tool">Monday.com</div>
+      <div class="tool">HubSpot</div>
+      <div class="tool">ClickUp</div>
+      <div class="tool">Google Workspace</div>
+
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <h2>Let's Work Together</h2>
+
+    <p>
+      Looking for a reliable Medical Virtual Assistant to support your
+      healthcare practice? I'd love to connect and discuss how I can help.
+    </p>
+
+    <a href="mailto:your-email@example.com" class="button">
+      Contact Me
+    </a>
+
+  </section>
+
+
+  <footer>
+    © 2026 Eya Amaka Julieth. Medical Virtual Assistant Portfolio.
+    <br>
+    Portfolio projects are simulated training projects using mock data.
+  </footer>
+
+</body>
+</html>
