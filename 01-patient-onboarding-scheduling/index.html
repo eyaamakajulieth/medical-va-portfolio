@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patient Onboarding & Scheduling | Eya Amaka Julieth</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7fbfc;
+    color: #18333b;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1050px, 92%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: white;
+    border-bottom: 1px solid #dce8eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    color: #123f4a;
+}
+
+.back-link {
+    color: #168b8b;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* HERO */
+
+.hero {
+    background: #123f4a;
+    color: white;
+    padding: 75px 0;
+}
+
+.project-label {
+    color: #8ed7d2;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    max-width: 800px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 760px;
+    color: #d6e7e9;
+    font-size: 1.05rem;
+}
+
+.simulated-badge {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 8px 14px;
+    border: 1px solid #75bfc0;
+    border-radius: 30px;
+    color: #d9f4f3;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 65px 0;
+}
+
+.section:nth-child(even) {
+    background: white;
+}
+
+.section-title {
+    color: #123f4a;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.section-intro {
+    color: #61777d;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+/* OVERVIEW */
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 35px;
+}
+
+.overview-text p {
+    color: #566d73;
+    margin-bottom: 17px;
+}
+
+.project-info {
+    background: #eef7f8;
+    padding: 25px;
+    border-radius: 18px;
+    height: fit-content;
+}
+
+.project-info div {
+    padding: 12px 0;
+    border-bottom: 1px solid #d8e7e9;
+}
+
+.project-info div:last-child {
+    border-bottom: none;
+}
+
+.project-info strong {
+    display: block;
+    color: #123f4a;
+    margin-bottom: 3px;
+}
+
+.project-info span {
+    color: #63797e;
+    font-size: 0.9rem;
+}
+
+/* WORKFLOW */
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.workflow-card {
+    background: white;
+    border: 1px solid #dfeaec;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.workflow-number {
+    color: #168b8b;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.workflow-card h3 {
+    color: #183f48;
+    margin: 8px 0;
+    font-size: 1.08rem;
+}
+
+.workflow-card p {
+    color: #687d83;
+    font-size: 0.92rem;
+}
+
+/* SKILLS */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background: #eef7f8;
+    border: 1px solid #d7e7e9;
+    color: #355760;
+    padding: 9px 14px;
+    border-radius: 25px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* EVIDENCE */
+
+.evidence-box {
+    background: #f1f7f8;
+    border: 1px dashed #9ebfc2;
+    border-radius: 18px;
+    padding: 35px;
+    text-align: center;
+}
+
+.evidence-box h3 {
+    color: #183f48;
+    margin-bottom: 8px;
+}
+
+.evidence-box p {
+    color: #657b81;
+}
+
+/* CTA */
+
+.cta {
+    background: #123f4a;
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.cta h2 {
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #d3e6e9;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #123f4a;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.btn:hover {
+    background: #e7f5f5;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0d3038;
+    color: #c7dadd;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.82rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .overview-grid,
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .workflow-card {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+
+        <a href="../" class="logo">
+            Eya Amaka Julieth
+        </a>
+
+        <a href="../" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+    </div>
+</nav>
+
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="project-label">
+            Project 01 • Medical Virtual Assistant
+        </div>
+
+        <h1>
+            Patient Onboarding & Scheduling
+        </h1>
+
+        <p>
+            A simulated healthcare workflow demonstrating how I would support
+            a patient from the initial appointment request through onboarding,
+            scheduling and appointment preparation.
+        </p>
+
+        <span class="simulated-badge">
+            Simulated Training Project • Mock Patient Data
+        </span>
+
+    </div>
+
+</header>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="overview-grid">
+
+            <div class="overview-text">
+
+                <h2 class="section-title">
+                    Project Overview
+                </h2>
+
+                <p>
+                    This project demonstrates a complete patient onboarding and
+                    scheduling workflow for a simulated women's health practice.
+                </p>
+
+                <p>
+                    The workflow focuses on making sure that a new patient is
+                    properly registered, receives the necessary onboarding
+                    information, gains access to the patient portal, has an
+                    appointment scheduled based on provider availability, and
+                    receives confirmation and required pre-appointment forms.
+                </p>
+
+                <p>
+                    The goal is to create an organized experience for both the
+                    patient and the healthcare team while ensuring that important
+                    administrative steps are completed before the appointment.
+                </p>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <strong>Practice</strong>
+                    <span>Blossom Women's Health & Wellness Clinic</span>
+                </div>
+
+                <div>
+                    <strong>Specialty</strong>
+                    <span>OB/GYN & Women's Health Care</span>
+                </div>
+
+                <div>
+                    <strong>System</strong>
+                    <span>TherapyNotes</span>
+                </div>
+
+                <div>
+                    <strong>Project Type</strong>
+                    <span>Simulated Training Project</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Patient Onboarding Workflow
+        </h2>
+
+        <p class="section-intro">
+            The workflow was structured into six stages, taking the patient
+            from the initial request for an appointment through appointment
+            confirmation and pre-appointment preparation.
+        </p>
+
+        <div class="workflow">
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 01</span>
+
+                <h3>
+                    Appointment Request
+                </h3>
+
+                <p>
+                    The patient contacts the clinic to request an appointment.
+                    The appointment request and patient intent are documented
+                    as the starting point of the onboarding process.
+                </p>
+            </div>
+
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 02</span>
+
+                <h3>
+                    Patient Profile Creation
+                </h3>
+
+                <p>
+                    Patient demographic information is captured and the
+                    patient profile is created in the appropriate system.
+                </p>
+            </div>
+
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 03</span>
+
+                <h3>
+                    Intake Form & Welcome Message
+                </h3>
+
+                <p>
+                    The required intake information is assigned and a
+                    welcome message is sent to the patient.
+                </p>
+            </div>
+
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 04</span>
+
+                <h3>
+                    Patient Portal Support
+                </h3>
+
+                <p>
+                    The patient is supported through the portal experience
+                    so they can access their welcome information and
+                    complete the required onboarding steps.
+                </p>
+            </div>
+
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 05</span>
+
+                <h3>
+                    Appointment Scheduling
+                </h3>
+
+                <p>
+                    Provider availability is reviewed and the patient's
+                    appointment is scheduled based on the available time.
+                </p>
+            </div>
+
+
+            <div class="workflow-card">
+                <span class="workflow-number">STEP 06</span>
+
+                <h3>
+                    Confirmation & Pre-Appointment Forms
+                </h3>
+
+                <p>
+                    The appointment is confirmed and the patient receives
+                    the necessary intake and consent forms before the
+                    appointment date.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Skills Demonstrated
+        </h2>
+
+        <div class="skills">
+
+            <span class="skill">Patient Registration</span>
+            <span class="skill">Patient Onboarding</span>
+            <span class="skill">EHR Navigation</span>
+            <span class="skill">Appointment Scheduling</span>
+            <span class="skill">Patient Portal Support</span>
+            <span class="skill">Intake Documentation</span>
+            <span class="skill">Patient Communication</span>
+            <span class="skill">Appointment Confirmation</span>
+            <span class="skill">Administrative Support</span>
+            <span class="skill">Attention to Detail</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Project Evidence
+        </h2>
+
+        <div class="evidence-box">
+
+            <h3>
+                Workflow Documentation & Screenshots
+            </h3>
+
+            <p>
+                Screenshots and supporting documentation from the simulated
+                workflow will be added here to demonstrate the process in practice.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Want to see what I can bring to your team?
+        </h2>
+
+        <p>
+            Explore more of my healthcare workflows and Medical Virtual Assistant projects.
+        </p>
+
+        <a href="../" class="btn">
+            Back to Portfolio
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        Eya Amaka Julieth • Medical Virtual Assistant
+    </p>
+
+    <p>
+        This is a simulated training project using mock patient data.
+    </p>
+
+</footer>
+
+</body>
+          </html>
