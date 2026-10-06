@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Medical Billing & Claims | Medical VA Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f9fc;
+      color: #18324b;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e5edf4;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #173b5e;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #31516b;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 80px 7% 70px;
+      background: linear-gradient(135deg, #eaf6ff, #ffffff);
+    }
+
+    .hero span {
+      display: inline-block;
+      background: #dff1ff;
+      color: #1769aa;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      max-width: 850px;
+      margin-bottom: 18px;
+      color: #173b5e;
+    }
+
+    .hero p {
+      max-width: 780px;
+      font-size: 18px;
+      color: #526b7d;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #173b5e;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      color: #607789;
+      margin-bottom: 35px;
+    }
+
+    .info-grid,
+    .billing-grid,
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5edf4;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(25, 67, 96, 0.06);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #1d5278;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #607789;
+      font-size: 15px;
+    }
+
+    .card ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: #607789;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .method-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #e4f3ff;
+      color: #1769aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .method-card {
+      min-height: 260px;
+    }
+
+    .evidence {
+      background: #edf7fc;
+    }
+
+    .evidence-box {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 35px;
+      border: 1px solid #dceaf2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .evidence-box h3 {
+      color: #173b5e;
+      margin-bottom: 8px;
+    }
+
+    .evidence-box p {
+      color: #607789;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1769aa;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: #125889;
+    }
+
+    .cta {
+      text-align: center;
+      background: #173b5e;
+      color: #ffffff;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #d9e8f2;
+    }
+
+    .cta .btn {
+      background: #ffffff;
+      color: #173b5e;
+    }
+
+    footer {
+      background: #102b43;
+      color: #a9c0d1;
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      .hero,
+      section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero {
+        padding-top: 60px;
+        padding-bottom: 55px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .info-grid,
+      .billing-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Medical VA Portfolio</div>
+
+    <a href="../index.html">
+      ← Back to Portfolio
+    </a>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <span>SIMULATED TRAINING PROJECT</span>
+
+    <h1>
+      Medical Billing &amp; Claims Workflow
+    </h1>
+
+    <p>
+      A simulated dental clinic workflow demonstrating two primary approaches
+      to billing and claim submission, including direct insurance claim
+      submission and out-of-network / out-of-pocket billing.
+    </p>
+
+  </header>
+
+
+  <!-- PROJECT OVERVIEW -->
+
+  <section>
+
+    <h2 class="section-title">
+      Project Overview
+    </h2>
+
+    <p class="section-intro">
+      This project demonstrates a simulated medical billing and claims workflow
+      using mock patient information. The workflow covers direct insurance claim
+      submission for in-network billing and out-of-network / out-of-pocket
+      billing, including the use of a CMS-1500 form and superbill.
+    </p>
+
+
+    <div class="info-grid">
+
+      <div class="card">
+
+        <h3>
+          Project Type
+        </h3>
+
+        <p>
+          Medical Billing &amp; Claims Workflow
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Practice Setting
+        </h3>
+
+        <p>
+          Dental Clinic Simulation
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Data
+        </h3>
+
+        <p>
+          Mock patient information and simulated billing documentation
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Claim Documentation
+        </h3>
+
+        <p>
+          CMS-1500 insurance form and superbill
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BILLING METHODS -->
+
+  <section>
+
+    <h2 class="section-title">
+      Two Primary Billing &amp; Claim Submission Methods
+    </h2>
+
+    <p class="section-intro">
+      The simulation covers two primary approaches to billing and claim
+      submission.
+    </p>
+
+
+    <div class="billing-grid">
+
+
+      <!-- IN NETWORK -->
+
+      <div class="card method-card">
+
+        <div class="method-number">
+          1
+        </div>
+
+        <h3>
+          Direct Insurance Claim Submission
+        </h3>
+
+        <p>
+          <strong>In-Network Billing</strong>
+        </p>
+
+        <p style="margin-top:10px;">
+          The provider submits the claim directly to the payer through:
+        </p>
+
+        <ul>
+
+          <li>
+            <strong>837P</strong> — Electronic professional claim submitted
+            through a clearinghouse.
+          </li>
+
+          <li>
+            <strong>CMS-1500</strong> — Paper professional claim form when
+            paper submission is permitted.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- OUT OF NETWORK -->
+
+      <div class="card method-card">
+
+        <div class="method-number">
+          2
+        </div>
+
+        <h3>
+          Out-of-Network / Out-of-Pocket Billing
+        </h3>
+
+        <p>
+          Used when the out-of-network provider does not bill the patient's
+          insurance directly.
+        </p>
+
+        <ul>
+
+          <li>
+            Patient pays the provider out of pocket.
+          </li>
+
+          <li>
+            The practice generates a superbill containing services, codes,
+            charges, and provider information.
+          </li>
+
+          <li>
+            The patient submits the superbill to insurance for possible
+            reimbursement based on out-of-network benefits.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DOCUMENTATION -->
+
+  <section>
+
+    <h2 class="section-title">
+      Billing Documentation
+    </h2>
+
+    <p class="section-intro">
+      The simulation includes two pieces of billing documentation generated
+      for a mock patient.
+    </p>
+
+
+    <div class="info-grid">
+
+
+      <div class="card">
+
+        <h3>
+          CMS-1500 Insurance Form
+        </h3>
+
+        <p>
+          A CMS-1500 insurance form was generated for a mock patient as part
+          of the simulated billing workflow.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Superbill
+        </h3>
+
+        <p>
+          A superbill was generated for a mock patient for the
+          out-of-network / out-of-pocket billing workflow.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section>
+
+    <h2 class="section-title">
+      Skills Demonstrated
+    </h2>
+
+    <div class="skills-grid">
+
+
+      <div class="card">
+
+        <h3>
+          Medical Billing
+        </h3>
+
+        <p>
+          Understanding of direct insurance billing and
+          out-of-network billing workflows.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Claim Submission
+        </h3>
+
+        <p>
+          Understanding of electronic and paper professional
+          claim submission methods.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          837P Claims
+        </h3>
+
+        <p>
+          Familiarity with electronic professional claims
+          submitted through a clearinghouse.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          CMS-1500
+        </h3>
+
+        <p>
+          Experience creating a simulated CMS-1500 insurance form
+          for a mock patient.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Superbill Preparation
+        </h3>
+
+        <p>
+          Experience generating a simulated superbill for
+          out-of-network reimbursement.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Billing Documentation
+        </h3>
+
+        <p>
+          Preparing and organizing billing documentation within
+          a simulated workflow.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- EVIDENCE -->
+
+  <section class="evidence">
+
+    <h2 class="section-title">
+      Project Evidence
+    </h2>
+
+
+    <div class="evidence-box">
+
+      <div>
+
+        <h3>
+          Medical Billing &amp; Claims Workflow Presentation
+        </h3>
+
+        <p>
+          View the interactive presentation containing the original
+          workflow content and visual evidence from the billing and
+          claims simulation.
+        </p>
+
+      </div>
+
+
+      <a
+        class="btn"
+        href="billing-claim-workflow.html"
+      >
+        View Workflow Presentation →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      Need Support With Your Healthcare Workflow?
+    </h2>
+
+    <p>
+      I provide reliable medical virtual assistance across healthcare
+      administration, patient support, insurance verification, prior
+      authorization, billing, claims, documentation, and workflow
+      coordination.
+    </p>
+
+    <a
+      class="btn"
+      href="../index.html#contact"
+    >
+      Hire Me
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Medical VA Portfolio ·
+    Simulated Training Project ·
+    Mock Data Used
+
+  </footer>
+
+</body>
+  </html>
