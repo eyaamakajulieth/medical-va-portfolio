@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pharmacy & Medication Management | Eya Amaka Julieth</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7faf9;
+  color:#183338;
+  line-height:1.6;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 5%;
+  background:#ffffff;
+  border-bottom:1px solid #dce7e7;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:800;
+  color:#145c63;
+}
+
+.back{
+  text-decoration:none;
+  color:#145c63;
+  font-weight:600;
+}
+
+.hero{
+  background:#0c3940;
+  color:#ffffff;
+  padding:75px 5%;
+}
+
+.hero-inner{
+  max-width:1000px;
+  margin:auto;
+}
+
+.eyebrow{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#8fd0d2;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,64px);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:800px;
+  color:#d6e7e8;
+  font-size:17px;
+}
+
+.badge{
+  display:inline-block;
+  margin-bottom:20px;
+  padding:8px 14px;
+  border:1px solid #79bfc2;
+  border-radius:30px;
+  color:#dff5f5;
+  font-size:13px;
+  font-weight:700;
+}
+
+.section{
+  padding:65px 5%;
+}
+
+.container{
+  max-width:1050px;
+  margin:auto;
+}
+
+.section-title{
+  font-size:30px;
+  margin-bottom:24px;
+  color:#145c63;
+}
+
+.overview{
+  background:#ffffff;
+  border:1px solid #dce7e7;
+  border-radius:18px;
+  padding:30px;
+}
+
+.info-grid,
+.workflow-grid,
+.skills{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.info-card,
+.step,
+.skill{
+  background:#ffffff;
+  border:1px solid #dce7e7;
+  border-radius:16px;
+  padding:24px;
+}
+
+.info-card strong{
+  display:block;
+  color:#145c63;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:6px;
+}
+
+.step-number{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.1em;
+  color:#168087;
+}
+
+.step h3{
+  margin:8px 0;
+  color:#183338;
+}
+
+.step p{
+  color:#64777b;
+}
+
+.skill{
+  padding:14px 18px;
+  text-align:center;
+  background:#eef7f7;
+  color:#145c63;
+  font-weight:600;
+}
+
+.evidence{
+  background:#eef7f7;
+  padding:65px 5%;
+}
+
+.evidence-box{
+  background:#ffffff;
+  border:1px solid #cfe0e0;
+  border-radius:18px;
+  padding:34px;
+  text-align:center;
+}
+
+.evidence-box h3{
+  color:#183338;
+  font-size:22px;
+}
+
+.note{
+  font-size:14px;
+  color:#687b7f;
+  margin-top:14px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:22px;
+  background:#145c63;
+  color:#ffffff;
+  padding:13px 22px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.cta{
+  background:#0c3940;
+  color:#ffffff;
+  text-align:center;
+  padding:65px 5%;
+}
+
+.cta h2{
+  font-size:30px;
+}
+
+.cta p{
+  color:#d6e7e8;
+  margin-top:10px;
+}
+
+.cta .btn{
+  background:#ffffff;
+  color:#145c63;
+}
+
+footer{
+  text-align:center;
+  background:#092f35;
+  color:#bcd0d2;
+  padding:24px 5%;
+  font-size:13px;
+}
+
+@media(max-width:700px){
+
+  .info-grid,
+  .workflow-grid,
+  .skills{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:55px 5%;
+  }
+
+  .section,
+  .evidence{
+    padding:48px 5%;
+  }
+
+  .logo{
+    font-size:17px;
+  }
+
+  .back{
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="logo">Eya Amaka Julieth</div>
+
+  <a class="back" href="../">
+    ← Back to Portfolio
+  </a>
+</nav>
+
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="eyebrow">
+      Project 07 • Medical Virtual Assistant
+    </div>
+
+    <h1>Pharmacy & Medication Management</h1>
+
+    <div class="badge">
+      Simulated Training Project • Mock Patient
+    </div>
+
+    <p>
+      Prescription processing and pharmacy workflow simulation using
+      OptiMantra, demonstrating patient selection, e-prescribing,
+      medication entry, diagnosis and pharmacy selection, review,
+      approval, routing, and documentation.
+    </p>
+
+  </div>
+
+</header>
+
+
+<section class="section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Project Overview
+    </h2>
+
+    <div class="overview">
+
+      <p>
+        This simulated Medical Virtual Assistant project demonstrates
+        the administrative workflow for processing a provider's
+        prescription after a patient consultation, diagnosis, and
+        laboratory examination.
+      </p>
+
+      <p style="margin-top:14px">
+        The workflow uses OptiMantra to locate the patient, open the
+        e-prescribing workflow, create the prescription, enter medication
+        instructions, associate the diagnosis, select the pharmacy,
+        review the prescription, support the approval and routing process,
+        and retain the prescription document as workflow evidence.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Project Information
+    </h2>
+
+    <div class="info-grid">
+
+      <div class="info-card">
+        <strong>System</strong>
+        OptiMantra
+      </div>
+
+      <div class="info-card">
+        <strong>Project Type</strong>
+        Simulated Training Project
+      </div>
+
+      <div class="info-card">
+        <strong>Practice Setting</strong>
+        Simulated Family Medicine Clinic
+      </div>
+
+      <div class="info-card">
+        <strong>Patient</strong>
+        Mock Patient
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Pharmacy Workflow
+    </h2>
+
+    <div class="workflow-grid">
+
+      <div class="step">
+        <div class="step-number">STEP 01</div>
+        <h3>Patient Selection</h3>
+        <p>
+          Search for the mock patient in the OptiMantra patient list
+          and confirm the correct patient record before proceeding.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 02</div>
+        <h3>Open Patient Chart</h3>
+        <p>
+          Open the patient's Actions menu and access the eRx workflow
+          under the Clinical section.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 03</div>
+        <h3>Launch eRx Workflow</h3>
+        <p>
+          Open the patient's e-prescribing screen before creating
+          the new prescription.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 04</div>
+        <h3>Create Prescription</h3>
+        <p>
+          Open Prescription Writer and select New Order to begin
+          entering the provider's prescription.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 05</div>
+        <h3>Enter Medication Details</h3>
+        <p>
+          Enter the medication, directions, quantity, days supply,
+          refills, and substitution preference.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 06</div>
+        <h3>Add Diagnosis & Pharmacy</h3>
+        <p>
+          Associate the prescription with the documented diagnosis
+          and select the patient's retail pharmacy.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 07</div>
+        <h3>Review Prescription Settings</h3>
+        <p>
+          Review the effective date and prescription controls before
+          moving forward with the workflow.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 08</div>
+        <h3>Review & Approve</h3>
+        <p>
+          Review the prescription in the medication list and capture
+          the approval status.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 09</div>
+        <h3>Complete & Document</h3>
+        <p>
+          Complete the prescription workflow and retain the available
+          routing and documentation information.
+        </p>
+      </div>
+
+
+      <div class="step">
+        <div class="step-number">STEP 10</div>
+        <h3>Retain Prescription Evidence</h3>
+        <p>
+          Retain the prescription document as evidence of the completed
+          simulated pharmacy workflow.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Skills Demonstrated
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill">
+        OptiMantra Navigation
+      </div>
+
+      <div class="skill">
+        Patient Chart Management
+      </div>
+
+      <div class="skill">
+        E-Prescribing Workflow
+      </div>
+
+      <div class="skill">
+        Prescription Data Entry
+      </div>
+
+      <div class="skill">
+        Medication Instructions
+      </div>
+
+      <div class="skill">
+        Diagnosis & Pharmacy Selection
+      </div>
+
+      <div class="skill">
+        Prescription Review
+      </div>
+
+      <div class="skill">
+        Documentation & Workflow Support
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="evidence">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Project Evidence
+    </h2>
+
+    <div class="evidence-box">
+
+      <h3>
+        Pharmacy & Medication Management Workflow
+      </h3>
+
+      <p class="note">
+        Explore the full simulated OptiMantra workflow, including
+        patient selection, eRx, prescription creation, medication
+        details, diagnosis and pharmacy selection, approval,
+        routing, and prescription documentation.
+      </p>
+
+      <a class="btn" href="pharmacy-workflow-optimantra.html">
+        View Workflow Presentation →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="cta">
+
+  <h2>
+    Want to see more of my healthcare workflows?
+  </h2>
+
+  <p>
+    Explore additional Medical Virtual Assistant projects and
+    workflow demonstrations.
+  </p>
+
+  <a class="btn" href="../">
+    Back to Portfolio
+  </a>
+
+</section>
+
+
+<footer>
+
+  Eya Amaka Julieth • Medical Virtual Assistant<br>
+
+  This is a simulated training project using mock patient data.
+
+</footer>
+
+</body>
+</html>
